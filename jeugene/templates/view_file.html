@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+          rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted">Uploaded File</h3>
+      </div>
+      <hr/>
+      <div>
+        <div class="wordCount"></div>
+        Filename:    {{params.filename}}<br>
+        <br>
+        <a id="dl_link" href="{{params.dl_link}}">Click Here to Download .txt file</a>
+
+        <br><br>
+        File Content:<br>
+        {% for paragraph in params.content %}
+          <div class = "paragraph"> 
+            <p><a href="">{{paragraph}}</a></p>
+          </div>
+        {% endfor %}
+
+      </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+      $("p > a").click(function() {
+        var text = $(this).text().split(" ");
+        alert("This paragraph is " + text.length + " words long");
+      });
+
+	$("#dl_link").click(function(){
+		alert("Warning. Once file is downloaded, it is removed from the database, and this page will stop working. Please check paragraphs before downloading"); 
+	});
+
+    });
+    </script>
+  </body>
+</html>
