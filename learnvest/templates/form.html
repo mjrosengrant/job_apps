@@ -1,0 +1,64 @@
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+  $(function() {
+    $( ".datepicker" ).datepicker({ 
+  		dateFormat: 'yy-mm-dd',
+  		constrainInput: false
+	});
+
+  });
+</script>
+
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<h1> Networth Finder</h1>
+		<h2>Select Date Range to Find Networth Records</h2>
+		<form method='GET' action="/networth">
+	        <div class="form-group">
+				<div class="col-md-4">
+					<h2>From</h2>
+		            <div class='input-group date' id='datetimepicker1'>
+		                <input class="datepicker form-control" name="from" placeholder = "Enter Start Date"/>
+		                <span class="input-group-addon">
+		                    <span class="glyphicon glyphicon-calendar"></span>
+		                </span>
+		            </div>
+	        	</div>
+				<div class="col-md-4">
+					<h2>To</h2>
+		            <div class='input-group date' id='datetimepicker2'>
+		                <input type='text' name="to" class="datepicker form-control" 
+		                placeholder = "Enter End Date" />
+		                <span class="input-group-addon">
+		                    <span class="glyphicon glyphicon-calendar"></span>
+		                </span>
+		            </div>
+		        </div>
+	            <br>
+	            <br>
+	            <div class='input-group submit'>
+	                <input type='submit' class="btn-success" value="Submit"/>
+	            </div>
+	        </div>
+		</form>
+
+
+	</div>
+</div>
